@@ -1,14 +1,9 @@
 class Movie < ApplicationRecord
-  has_many :bookmarks, dependent: :restrict_with_exception
-
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   validates :overview, presence: true
 
-  before_destroy :ensure_no_bookmarks
+  has_many :bookmarks, dependent: :restrict_with_exception
+  # ... other associations and validations ...
 
-  private
-
-  def ensure_no_bookmarks
-    throw(:abort) if bookmarks.any?
-  end
+  # ... other model logic ...
 end
