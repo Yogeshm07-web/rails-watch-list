@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# db/seeds.rb
+
+# Create movies and characters
+movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+characters = Character.create(name: "Luke", movie: movies.first)
+
+# Add more seed data as needed
+# ...
+
+puts "Seed data has been successfully created!"
